@@ -1,0 +1,31 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!-- //COOKIE SCRIPTS
+
+// retrieve info on cookie.
+function GetCookie(name) {
+	var startIndex = document.cookie.indexOf(name);
+	if (startIndex != -1) {
+		var endIndex = document.cookie.indexOf(";", startIndex);
+		if (endIndex == -1) endIndex = document.cookie.length;
+		return unescape(document.cookie.substring(startIndex+name.length+1, endIndex));
+	} 
+	else {
+		return null;
+	}
+}
+
+// delete info on cookie.
+function DeleteCookie() {
+	var expire = new Date ();
+	expire.setTime (expire.getTime() - (24 * 60 * 60 * 1000));
+	document.cookie = "FreeLogin" + "=; expires=" + expire.toGMTString();
+	window.location="free.html";
+}
+
+var temp = GetCookie("FreeLogin");
+if (temp == null) {
+	window.location="free.html";
+	}
+
+// -->
+</SCRIPT>

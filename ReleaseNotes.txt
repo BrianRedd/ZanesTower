@@ -1,0 +1,20 @@
+Version 2
+=========
+
+Jan 2004
+--------
+Moved all functions out of zane.html into Javascript include files (in INC subfolder).
+Changed Zane.html to form page to get start parameters (instead of window prompts).
+	FUTURE FUNCTION: Cookie based, to remember usernames and high scores (and possibly allow for saved games)
+Found additional/better graphics for some monsters
+
+Aug 2004
+--------
+Added variable monster graphic.  (monimg[x][y][z])  Currently supports 2 graphics for all monsters.
+	Instead of 14 monster graphics, there are now 28. (1a-14a.gif and 1b-14b.gif)
+	Monsters with one image have multiple copies of this image.
+	Changed 06-buildtower.js, 10-checkfunction.js, and 14-setupmonster.js.  Defaults all mon[x][y][z] to "a",
+		But has 50% chance of changing to "b".
+	FUTURE FUNCTION: Different graphics for healthy and wounded monsters - when HP drops to particular level,
+		monimg[x][y][z] can change.
+

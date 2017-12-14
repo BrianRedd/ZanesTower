@@ -1,0 +1,119 @@
+<html>
+<head>
+
+<script Language="JavaScript1.2">
+var ZVER = new Array;
+var ZVERappend = new Array;
+var Zincs = 0;
+
+ZVERappend[0] = "main";
+
+// ******VERSION******
+ZVER[0] = 0.111
+
+</script>
+
+<SCRIPT type="text/javascript" src="inc/00-general.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/01-userprefs.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/02-initvars.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/03-towervars.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/04-items.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/05-monsters.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/06-buildtower.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/07-infoscroller.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/08-setfinalchecks.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/09-keyboard.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/10-checkfunctions.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/11-actionfunctions.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/12-monsterfunctions.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/13-setuprooms.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/14-setupmonsters.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/15-setupitems.js"></SCRIPT>
+
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="MM_preloadImages('images/buttons/dropitem-ro.gif', 'images/buttons/inventory-ro.gif', 'images/buttons/rest-ro.gif', 'images/buttons/retreat-ro.gif', 'images/buttons/rotateinv-ro.gif', 'images/buttons/turnaround-ro.gif', 'images/buttons/listen-ro.gif', 'images/actions/zzz.gif', 'images/actions/boom.gif')" background="images/gray2.jpg">
+<p>
+
+<SCRIPT type="text/javascript" src="inc/B01-screenvars.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B02-screen.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B03-FeatLayer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B04-itemlayer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B05-InvWin.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B06-BagofHolding.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B07-DmgLayer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B08-ActionLayer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B09-BoxLayer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="inc/B10-MonLayer.js"></SCRIPT>
+
+<form name="InfoForm">
+<p>
+	<div align="center">
+	<input type="text" name="TopLine" size=100>
+	<input type="text" name="SecondLine" size=100>
+	<input type="text" name="ThirdLine" size=100>
+	<input type="text" name="ForthLine" size=100>
+	<input type="text" name="FifthLine" size=100>
+	<input type="text" name="LastLine" size=100>
+	</div>
+
+
+<script>
+
+ViewRefresh();
+
+</script>
+
+</form>
+
+<script Language="JavaScript1.2">
+//VERSION CONTROL
+
+var tempA = 0;
+var tempB = 0;
+
+for (i=0;i<Zincs;i++) {
+	for (ii=i+1;ii<=Zincs;ii++) {
+		if (ZVER[i] < ZVER[ii]) {
+			tempA = ZVER[ii];
+			tempB = ZVERappend[ii];
+			ZVER[ii] = ZVER[i];
+			ZVERappend[ii] = ZVERappend[i];
+			ZVER[i] = tempA;
+			ZVERappend[i] = tempB;
+			}
+		}
+	}
+
+var VERSION = "2."+ZVER[0]+"("+ZVERappend[0]+")";
+
+window.status = "Version 2, Build "+VERSION;
+
+</script>
+
+</body>
+</html>

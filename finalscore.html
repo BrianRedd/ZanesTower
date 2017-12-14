@@ -1,0 +1,46 @@
+<table width="200" border="0" align="center" cellpadding="2"><tr><td colspan="2"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Final Score</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#FF0000" VLINK="#800000" ALINK="#FF00FF" BACKGROUND="images/gray2.jpg">
+
+<script language="JavaScript">
+
+	document.write('<table width="200" border="0" align="center" cellpadding="2"><tr><td colspan="2">');
+	document.write('<div align="center"><h3>'+parent.fsmsg1+'</h3></div>');
+	document.write('</td></tr><tr><td><div align="right">Level</div>');
+	var temp1 = "r1";
+	if (parent.difficulty == 2) temp1 = "a2";
+	if (parent.difficulty == 3) temp1 = "g3";
+	document.write('</td><td><div align="left"><img src="images/numbers/'+temp1+'.gif" width="25" height="50"></div>');
+	document.write('</td></tr><tr><td colspan="2"><div align="center">Score<br>');
+	var tarcol = "a";
+	if (parent.finalscore < (500*parent.difficulty)) tarcol = "r";
+	var scdig = new Array(5);
+	alert(parent.finalscore);
+	scdig[0] = Math.abs(parseInt(parent.finalscore/10000));
+	scdig[1] = parseInt((Math.abs(parent.finalscore)-(scdig[0]*10000))/1000);
+	scdig[2] = parseInt((Math.abs(parent.finalscore)-(scdig[0]*10000)-(scdig[1]*1000))/100);
+	scdig[3] = parseInt((Math.abs(parent.finalscore)-(scdig[0]*10000)-(scdig[1]*1000)-(scdig[2]*100))/10);
+	scdig[4] = Math.abs(parent.finalscore)-(scdig[0]*10000)-(scdig[1]*1000)-(scdig[2]*100)-(scdig[3]*10);
+	var temp2 = 0;
+	var sccol = new Array(5);
+	for (i=0; i<5; i++) {
+		sccol[i] = "g";
+		if (temp2 == 1) sccol[i] = tarcol;
+		if (scdig[i] > 0) {
+			sccol[i] = tarcol;
+			temp2 = 1;
+			}
+		document.write('<img src="images/numbers/'+sccol[i]+scdig[i]+'.gif" width="25" height="50">');
+		}
+	document.write('</td></tr><tr><td colspan="2"><div align="center"><input type="button" value="OK" onClick="window.close();">');
+	document.write('</div></td></tr></table>');
+
+</script>
+
+</BODY>
+</HTML>
+
